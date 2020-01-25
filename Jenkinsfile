@@ -5,11 +5,11 @@ node{
 	}
 
 	stage('Build image') {
-    		app = docker.build("xavki/nginx")
+    		app = docker.build("dali/nginx")
 	}
 
 	stage('Test image') {
-    		docker.image('xavki/nginx').withRun('-p 80:80') { c ->
+    		docker.image('dali/nginx').withRun('-p 80:80') { c ->
     		sh 'docker ps'
     		sh 'curl localhost'
 		}
